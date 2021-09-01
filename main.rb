@@ -25,3 +25,17 @@ puts "contains 10? #{list.contains?(10)}"
 puts "index of 2: #{list.find(2)}"
 puts "index of 5: #{list.find(5)}"
 puts "index of 10: #{list.find(10)}"
+puts 'inserting at 10:'
+list.insert_at(10, 10)
+puts 'inserting at 2:'
+list.insert_at(10, 2)
+puts list.to_s
+puts 'removing at 0'
+list.remove_at(0)
+puts list.to_s
+puts 'removing at 2'
+list.remove_at(2)
+puts list.to_s
+puts 'removing at 1'
+list.remove_at(1)
+puts list.to_s

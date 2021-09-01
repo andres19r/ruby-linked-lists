@@ -106,4 +106,42 @@ class LinkedList
     s += 'nil'
     s
   end
+
+  def insert_at(value, index)
+    if index > size - 1
+      puts 'index error'
+      return nil
+    end
+
+    i = 0
+    tmp = @head
+    n = Node.new
+    n.value = value
+    until tmp.nil?
+      if index - 1 == i
+        n.next_node = tmp.next_node.next_node
+        tmp.next_node = n
+      end
+      tmp = tmp.next_node
+      i += 1
+    end
+  end
+
+  def remove_at(index)
+    i = 1
+    tmp = @head
+    if index.zero?
+      @head = tmp.next_node
+    else
+      until tmp.next_node.nil?
+        prev = tmp
+        if index == i
+          prev.next_node = tmp.next_node.next_node
+          return
+        end
+        i += 1
+        tmp = tmp.next_node
+      end
+    end
+  end
 end
